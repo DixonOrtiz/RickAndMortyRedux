@@ -4,13 +4,22 @@ import {
   FETCH_CHARACTERS_FAILURE,
 } from './characterTypes';
 
+//
+//Initial state of characterState
+//
 const initialState = {
   loading: false,
   characters: [],
   error: '',
 };
 
-const reducer = (state = initialState, action) => {
+/**
+ * @function characterReducer
+ * @description reducerthat receives the current global state and an action, and modify the state
+ * @param  { (state, action) }
+ * @return  { fetchCharactersSuccess(characters) }
+ */
+const characterReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_CHARACTERS_REQUEST:
       return {
@@ -34,4 +43,4 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export default reducer;
+export default characterReducer;

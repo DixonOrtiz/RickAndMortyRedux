@@ -6,6 +6,11 @@ import {
   FETCH_CHARACTERS_FAILURE,
 } from './characterTypes';
 
+/**
+ * @function fetchCharacters
+ * @description faction creator that performs a get request to a Rick and Morty api
+ * @return  { fetchCharactersSuccess(characters) }
+ */
 export const fetchCharacters = () => {
   return (dispatch) => {
     dispatch(fetchCharactersRequest());
@@ -23,12 +28,28 @@ export const fetchCharacters = () => {
   };
 };
 
+/**
+ * @function fetchCharactersRequest
+ * @description action creator standard
+ * @return  {     
+              type: FETCH_CHARACTERS_REQUEST,
+            }
+ */
 export const fetchCharactersRequest = () => {
   return {
     type: FETCH_CHARACTERS_REQUEST,
   };
 };
 
+/**
+ * @function fetchCharactersSuccess
+ * @description action creator standard
+ * @param  { array[object] characters }
+ * @return  {
+              type: FETCH_CHARACTERS_SUCCESS,
+              payload: characters,
+            }
+*/
 export const fetchCharactersSuccess = (characters) => {
   return {
     type: FETCH_CHARACTERS_SUCCESS,
@@ -36,6 +57,15 @@ export const fetchCharactersSuccess = (characters) => {
   };
 };
 
+/**
+ * @function fetchCharactersRequest
+ * @description action creator standard
+ * @param  { error }
+ * @return  {
+              type: FETCH_CHARACTERS_FAILURE,
+              payload: error,
+}
+*/
 export const fetchCharactersFailure = (error) => {
   return {
     type: FETCH_CHARACTERS_FAILURE,

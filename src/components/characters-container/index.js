@@ -4,17 +4,27 @@ import { connect } from 'react-redux';
 import { fetchCharacters } from '../../redux';
 import CharacterCard from '../character-card';
 
-const CharactersContainer = ({ characters, fetchCharacters }) => {
+/**
+ * @function  Component->CharactersContainer
+ * @description  component that returns different views based on the current state of a get request
+ * @param  { props->(reduxState characterState, actionCreator fetchCharacters) }
+ * @return  { JSX }
+ */
+const CharactersContainer = ({ characterState, fetchCharacters }) => {
   useEffect(() => {
     fetchCharacters();
   }, [fetchCharacters]);
 
-  return (
+  return characterState.loading ? (
+    <h2>Loading</h2>
+  ) : characterState.error ? (
+    <h2>{characterState.error}</h2>
+  ) : (
     <div>
       <div>
-        {characters &&
-          characters &&
-          characters.map((character) => (
+        {characterState.characters &&
+          characterState.characters &&
+          characterState.characters.map((character) => (
             <CharacterCard
               key={character.id}
               name={character.name}
@@ -28,12 +38,18 @@ const CharactersContainer = ({ characters, fetchCharacters }) => {
   );
 };
 
+//
+//Function that allows to pass as props a section of the global state to the component
+//
 const mapStateToProps = (state) => {
   return {
-    characters: state.characterState.characters,
+    characterState: state.characterState,
   };
 };
 
+//
+//Function that allows to dispatch a change to the state by means of an action creator
+//
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchCharacters: () => dispatch(fetchCharacters()),

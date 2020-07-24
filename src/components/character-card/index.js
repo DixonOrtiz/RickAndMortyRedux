@@ -1,6 +1,12 @@
 import React from 'react';
 import './styles.css';
 
+/**
+ * @function Component->CharacterCard
+ * @description simple component that displays data on a yellow card
+ * @param  { props->(name, status, species, image) }
+ * @return  { JSX }
+ */
 const CharacterCard = ({ name, status, species, image }) => {
   return (
     <div className="card">
