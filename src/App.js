@@ -1,10 +1,14 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+
+import CharactersContainer from './components/characters-container';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Rick and Morty Redux App</h1>
-    </div>
+    <Provider store={store}>
+      <CharactersContainer />
+    </Provider>
   );
 }
 

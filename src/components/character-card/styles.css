@@ -1,0 +1,16 @@
+.card {
+  background-color: #fffb2c;
+  border-radius: 30px;
+  color: #1f1f1f;
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  justify-content: space-around;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 1em;
+  width: 50%;
+}
+
+.card img {
+  border-radius: 100px;
+}
