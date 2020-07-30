@@ -8,7 +8,7 @@ import {
 
 /**
  * @function fetchCharacters
- * @description faction creator that performs a get request to a Rick and Morty api
+ * @description action creator that performs a get request to a Rick and Morty api
  * @return  { fetchCharactersSuccess(characters) }
  */
 export const fetchCharacters = () => {

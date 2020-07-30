@@ -3,7 +3,7 @@ import store from './redux/store';
 import CharactersContainer from './components/characters-container';
 
 //
-//Provider component that provides the entire application with a global status of redux
+//Provider component that provides the entire application with a global state of redux
 //
 import { Provider } from 'react-redux';
 
